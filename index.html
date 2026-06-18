@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>For Cutiepie ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+overflow:hidden;
+background:#000;
+color:white;
+}
+
+.page{
+height:100vh;
+width:100%;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+background-size:cover;
+background-position:center;
+position:absolute;
+top:0;
+left:0;
+}
+
+.active{
+display:flex;
+animation:fade .8s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.95);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.3rem;
+line-height:1.6;
+}
+
+button{
+padding:16px 40px;
+margin-top:30px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.next{
+background:#ff4f8b;
+color:white;
+}
+
+.yes{
+background:#00c853;
+color:white;
+}
+
+#noBtn{
+position:absolute;
+background:#ff1744;
+color:white;
+}
+
+#countdown{
+font-size:2rem;
+margin-top:20px;
+}
+
+.heart{
+position:fixed;
+font-size:22px;
+animation:float 6s linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+img{
+max-width:320px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.4);
+margin:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="page1" class="page active" style="background-image:url('images/aditi1.jpg')">
+<div class="overlay"></div>
+<div class="content">
+
+<h1>Hey Cutiepie ❤️</h1>
+
+<p>
+Before tomorrow's date...
+<br><br>
+Your Idiot has something important to tell you.
+</p>
+
+<button class="next" onclick="go(2)">
+Start ✨
+</button>
+
+</div>
+</div>
+
+<div id="page2" class="page" style="background-image:url('images/couple1.jpg')">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>Date Countdown ⏳</h1>
+
+<div id="countdown"></div>
+
+<button class="next" onclick="go(3)">
+Continue ❤️
+</button>
+
+</div>
+
+</div>
+
+<div id="page3" class="page" style="background-image:url('images/shoe.jpg')">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<img src="images/shoe.jpg">
+
+<h1>Princess 👑</h1>
+
+<p>
+Things I do for my Princess ❤️
+</p>
+
+<button class="next" onclick="go(4)">
+Aww 🥹
+</button>
+
+</div>
+
+</div>
+
+<div id="page4" class="page" style="background-image:url('images/aditi2.jpg')">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<img src="images/aditi2.jpg">
+
+<h1>Cutiepie.exe</h1>
+
+<p>
+Cutiepie has stopped working 😂
+</p>
+
+<button class="next" onclick="go(5)">
+Next
+</button>
+
+</div>
+
+</div>
+
+<div id="page5" class="page" style="background-image:url('images/couple2.jpg')">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<img src="images/couple2.jpg">
+
+<h1>Evidence ❤️</h1>
+
+<p>
+Evidence that we look cute together.
+</p>
+
+<button class="next" onclick="go(6)">
+Facts 😌
+</button>
+
+</div>
+
+</div>
+
+<div id="page6" class="page">
+
+<div class="content">
+
+<h1>Question 1 😂</h1>
+
+<p>
+Who steals fries?
+</p>
+
+<button class="next" onclick="alert('Caught red handed 🍟😂')">
+Cutiepie
+</button>
+
+<button class="next" onclick="alert('Nice try 😭')">
+Idiot
+</button>
+
+<br>
+
+<button class="next" onclick="go(7)">
+Next
+</button>
+
+</div>
+
+</div>
+
+<div id="page7" class="page">
+
+<div class="content">
+
+<h1>Question 2 😏</h1>
+
+<p>
+Who gets angry first?
+</p>
+
+<button class="next" onclick="alert('Investigation ongoing 😂')">
+Cutiepie
+</button>
+
+<button class="next" onclick="alert('Suspicious answer 😭')">
+Idiot
+</button>
+
+<br>
+
+<button class="next" onclick="go(8)">
+Continue
+</button>
+
+</div>
+
+</div>
+
+<div id="page8" class="page">
+
+<div class="content">
+
+<h1>Cutiepie ❤️</h1>
+
+<p>
+Will you go on a date with your Idiot tomorrow?
+</p>
+
+<button class="yes" onclick="go(9)">
+YES ❤️
+</button>
+
+<button id="noBtn">
+NO 😭
+</button>
+
+</div>
+
+</div>
+
+<div id="page9" class="page" style="background-image:url('images/couple3.jpg')">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>YAYYYYYYYYY ❤️🎉</h1>
+
+<p>
+
+Cutiepie officially agreed ❤️
+
+<br><br>
+
+From random conversations...
+
+<br>
+
+To silly fights...
+
+<br>
+
+To stolen fries...
+
+<br>
+
+To tomorrow's date...
+
+<br><br>
+
+My favourite place is still next to you ❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function go(page){
+
+document
+.querySelectorAll(".page")
+.forEach(x=>x.classList.remove("active"));
+
+document
+.getElementById("page"+page)
+.classList.add("active");
+
+hearts();
+
+}
+
+const target =
+new Date("2026-06-19 10:00:00").getTime();
+
+setInterval(()=>{
+
+let now=new Date().getTime();
+
+let diff=target-now;
+
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((diff%(1000*60*60))/(1000*60));
+let s=Math.floor((diff%(1000*60))/1000);
+
+let c=document.getElementById("countdown");
+
+if(c){
+
+c.innerHTML=
+d+" Days "+
+h+" Hours "+
+m+" Minutes "+
+s+" Seconds";
+
+}
+
+},1000);
+
+function hearts(){
+
+for(let i=0;i<15;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},6000);
+
+}
+
+}
+
+let tries=0;
+
+const no=document.getElementById("noBtn");
+
+const texts=[
+"Really?",
+"Think Again",
+"Cutiepie 😭",
+"Please?",
+"Pretty Please?",
+"System Error",
+"Wrong Answer",
+"Seriously?",
+"Still No?",
+"Just Press YES ❤️"
+];
+
+function moveNo(){
+
+tries++;
+
+if(tries<10){
+
+no.innerText=texts[tries];
+
+no.style.left=Math.random()*80+"vw";
+
+no.style.top=Math.random()*80+"vh";
+
+}else{
+
+no.style.display="none";
+
+alert(
+"Okay okay ❤️ We both know the answer 😌"
+);
+
+}
+
+}
+
+no.addEventListener("mouseover",moveNo);
+no.addEventListener("click",moveNo);
+
+</script>
+
+</body>
+</html>
