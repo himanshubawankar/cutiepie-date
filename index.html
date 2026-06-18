@@ -1,161 +1,55 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Cutiepie ❤️</title>
+<title>For My Cutiepie ❤️</title>
 
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-body{
-overflow:hidden;
-background:#000;
-color:white;
-}
+<link rel="stylesheet" href="style.css">
 
-.page{
-height:100vh;
-width:100%;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding:20px;
-background-size:cover;
-background-position:center;
-position:absolute;
-top:0;
-left:0;
-}
-
-.active{
-display:flex;
-animation:fade .8s ease;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:scale(.95);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
-}
-
-.content{
-position:relative;
-z-index:2;
-max-width:900px;
-}
-
-h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-p{
-font-size:1.3rem;
-line-height:1.6;
-}
-
-button{
-padding:16px 40px;
-margin-top:30px;
-border:none;
-border-radius:50px;
-font-size:18px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.next{
-background:#ff4f8b;
-color:white;
-}
-
-.yes{
-background:#00c853;
-color:white;
-}
-
-#noBtn{
-position:absolute;
-background:#ff1744;
-color:white;
-}
-
-#countdown{
-font-size:2rem;
-margin-top:20px;
-}
-
-.heart{
-position:fixed;
-font-size:22px;
-animation:float 6s linear forwards;
-pointer-events:none;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:1;
-}
-100%{
-transform:translateY(-100px);
-opacity:0;
-}
-}
-
-img{
-max-width:320px;
-border-radius:25px;
-box-shadow:0 0 25px rgba(255,255,255,.4);
-margin:20px;
-}
-
-</style>
 </head>
 
 <body>
 
-<div id="page1" class="page active" style="background-image:url('images/aditi1.jpg')">
+<div id="hearts-container"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page active hero-page" id="page1">
+
 <div class="overlay"></div>
+
 <div class="content">
 
-<h1>Hey Cutiepie ❤️</h1>
+<h1 class="main-title">
+Hey Cutiepie ❤️
+</h1>
 
-<p>
+<p class="hero-text">
 Before tomorrow's date...
 <br><br>
-Your Idiot has something important to tell you.
+Your Idiot has something special for you.
 </p>
 
-<button class="next" onclick="go(2)">
-Start ✨
+<button class="primary-btn" onclick="nextPage(2)">
+Start The Journey ✨
 </button>
 
 </div>
-</div>
 
-<div id="page2" class="page" style="background-image:url('images/couple1.jpg')">
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page countdown-page" id="page2">
 
 <div class="overlay"></div>
 
@@ -163,23 +57,47 @@ Start ✨
 
 <h1>Date Countdown ⏳</h1>
 
-<div id="countdown"></div>
+<div id="countdown-box">
 
-<button class="next" onclick="go(3)">
+<div class="count-card">
+<span id="days">00</span>
+<small>Days</small>
+</div>
+
+<div class="count-card">
+<span id="hours">00</span>
+<small>Hours</small>
+</div>
+
+<div class="count-card">
+<span id="minutes">00</span>
+<small>Minutes</small>
+</div>
+
+<div class="count-card">
+<span id="seconds">00</span>
+<small>Seconds</small>
+</div>
+
+</div>
+
+<button class="primary-btn" onclick="nextPage(3)">
 Continue ❤️
 </button>
 
 </div>
 
-</div>
+</section>
 
-<div id="page3" class="page" style="background-image:url('images/shoe.jpg')">
+<!-- PAGE 3 -->
+
+<section class="page photo-page" id="page3">
 
 <div class="overlay"></div>
 
 <div class="content">
 
-<img src="images/shoe.jpg">
+<img src="images/princess.jpg" class="memory-img">
 
 <h1>Princess 👑</h1>
 
@@ -187,43 +105,47 @@ Continue ❤️
 Things I do for my Princess ❤️
 </p>
 
-<button class="next" onclick="go(4)">
+<button class="primary-btn" onclick="nextPage(4)">
 Aww 🥹
 </button>
 
 </div>
 
-</div>
+</section>
 
-<div id="page4" class="page" style="background-image:url('images/aditi2.jpg')">
+<!-- PAGE 4 -->
+
+<section class="page photo-page" id="page4">
 
 <div class="overlay"></div>
 
 <div class="content">
 
-<img src="images/aditi2.jpg">
+<img src="images/holi.jpg" class="memory-img">
 
-<h1>Cutiepie.exe</h1>
+<h1>Cutiepie.exe 😂</h1>
 
 <p>
-Cutiepie has stopped working 😂
+System overloaded with cuteness.
 </p>
 
-<button class="next" onclick="go(5)">
-Next
+<button class="primary-btn" onclick="nextPage(5)">
+Next 😆
 </button>
 
 </div>
 
-</div>
+</section>
 
-<div id="page5" class="page" style="background-image:url('images/couple2.jpg')">
+<!-- PAGE 5 -->
+
+<section class="page photo-page" id="page5">
 
 <div class="overlay"></div>
 
 <div class="content">
 
-<img src="images/couple2.jpg">
+<img src="images/selfie.jpg" class="memory-img">
 
 <h1>Evidence ❤️</h1>
 
@@ -231,43 +153,49 @@ Next
 Evidence that we look cute together.
 </p>
 
-<button class="next" onclick="go(6)">
+<button class="primary-btn" onclick="nextPage(6)">
 Facts 😌
 </button>
 
 </div>
 
-</div>
+</section>
 
-<div id="page6" class="page">
+<!-- PAGE 6 -->
+
+<section class="page question-page" id="page6">
 
 <div class="content">
 
-<h1>Question 1 😂</h1>
+<h1>Question 1 🍟</h1>
 
 <p>
 Who steals fries?
 </p>
 
-<button class="next" onclick="alert('Caught red handed 🍟😂')">
+<div class="answer-group">
+
+<button onclick="showAnswer('Caught red handed 😂🍟')">
 Cutiepie
 </button>
 
-<button class="next" onclick="alert('Nice try 😭')">
+<button onclick="showAnswer('Nice try 😭')">
 Idiot
 </button>
 
-<br>
+</div>
 
-<button class="next" onclick="go(7)">
+<button class="primary-btn" onclick="nextPage(7)">
 Next
 </button>
 
 </div>
 
-</div>
+</section>
 
-<div id="page7" class="page">
+<!-- PAGE 7 -->
+
+<section class="page question-page" id="page7">
 
 <div class="content">
 
@@ -277,35 +205,100 @@ Next
 Who gets angry first?
 </p>
 
-<button class="next" onclick="alert('Investigation ongoing 😂')">
+<div class="answer-group">
+
+<button onclick="showAnswer('Investigation ongoing 😂')">
 Cutiepie
 </button>
 
-<button class="next" onclick="alert('Suspicious answer 😭')">
+<button onclick="showAnswer('Suspicious answer 😭')">
 Idiot
 </button>
 
-<br>
+</div>
 
-<button class="next" onclick="go(8)">
+<button class="primary-btn" onclick="nextPage(8)">
 Continue
 </button>
 
 </div>
 
+</section>
+
+<!-- PAGE 8 -->
+
+<section class="page question-page" id="page8">
+
+<div class="content">
+
+<h1>Question 3 ❤️</h1>
+
+<p>
+Who fell first?
+</p>
+
+<div class="answer-group">
+
+<button onclick="showAnswer('That's adorable ❤️')">
+Idiot
+</button>
+
+<button onclick="showAnswer('Interesting 🤔❤️')">
+Cutiepie
+</button>
+
 </div>
 
-<div id="page8" class="page">
+<button class="primary-btn" onclick="nextPage(9)">
+Next
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 9 -->
+
+<section class="page gallery-page" id="page9">
+
+<div class="content">
+
+<h1>Some Memories ❤️</h1>
+
+<div class="gallery">
+
+<img src="images/couple.jpg">
+<img src="images/flower.jpg">
+<img src="images/memory.jpg">
+
+</div>
+
+<button class="primary-btn" onclick="nextPage(10)">
+One More Thing...
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 10 -->
+
+<section class="page proposal-page" id="page10">
 
 <div class="content">
 
 <h1>Cutiepie ❤️</h1>
 
-<p>
-Will you go on a date with your Idiot tomorrow?
+<p class="proposal-text">
+
+Will you go on a date
+with your Idiot tomorrow?
+
 </p>
 
-<button class="yes" onclick="go(9)">
+<div class="proposal-buttons">
+
+<button class="yes-btn" onclick="acceptLove()">
 YES ❤️
 </button>
 
@@ -317,11 +310,17 @@ NO 😭
 
 </div>
 
-<div id="page9" class="page" style="background-image:url('images/couple3.jpg')">
+</section>
+
+<!-- PAGE 11 -->
+
+<section class="page final-page" id="page11">
 
 <div class="overlay"></div>
 
 <div class="content">
+
+<img src="images/final.jpg" class="memory-img">
 
 <h1>YAYYYYYYYYY ❤️🎉</h1>
 
@@ -347,125 +346,21 @@ To tomorrow's date...
 
 <br><br>
 
-My favourite place is still next to you ❤️
+My favorite place is still next to you ❤️
 
 </p>
 
-</div>
+<button class="primary-btn" onclick="celebrate()">
+See You Tomorrow ❤️
+</button>
 
 </div>
 
-<script>
+</section>
 
-function go(page){
+<div id="popupMessage"></div>
 
-document
-.querySelectorAll(".page")
-.forEach(x=>x.classList.remove("active"));
-
-document
-.getElementById("page"+page)
-.classList.add("active");
-
-hearts();
-
-}
-
-const target =
-new Date("2026-06-19 10:00:00").getTime();
-
-setInterval(()=>{
-
-let now=new Date().getTime();
-
-let diff=target-now;
-
-let d=Math.floor(diff/(1000*60*60*24));
-let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-let m=Math.floor((diff%(1000*60*60))/(1000*60));
-let s=Math.floor((diff%(1000*60))/1000);
-
-let c=document.getElementById("countdown");
-
-if(c){
-
-c.innerHTML=
-d+" Days "+
-h+" Hours "+
-m+" Minutes "+
-s+" Seconds";
-
-}
-
-},1000);
-
-function hearts(){
-
-for(let i=0;i<15;i++){
-
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"vw";
-
-document.body.appendChild(h);
-
-setTimeout(()=>{
-h.remove();
-},6000);
-
-}
-
-}
-
-let tries=0;
-
-const no=document.getElementById("noBtn");
-
-const texts=[
-"Really?",
-"Think Again",
-"Cutiepie 😭",
-"Please?",
-"Pretty Please?",
-"System Error",
-"Wrong Answer",
-"Seriously?",
-"Still No?",
-"Just Press YES ❤️"
-];
-
-function moveNo(){
-
-tries++;
-
-if(tries<10){
-
-no.innerText=texts[tries];
-
-no.style.left=Math.random()*80+"vw";
-
-no.style.top=Math.random()*80+"vh";
-
-}else{
-
-no.style.display="none";
-
-alert(
-"Okay okay ❤️ We both know the answer 😌"
-);
-
-}
-
-}
-
-no.addEventListener("mouseover",moveNo);
-no.addEventListener("click",moveNo);
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
