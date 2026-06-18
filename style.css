@@ -313,10 +313,12 @@ margin:25px 0;
 
 .gallery img{
 
-width:220px;
-height:220px;
+width:250px;
+height:auto;
 
-object-fit:cover;
+max-width:100%;
+
+object-fit:contain;
 
 border-radius:20px;
 
