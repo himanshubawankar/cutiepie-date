@@ -172,18 +172,16 @@ NO BUTTON ESCAPE
 --------------------- */
 
 const noMessages = [
-
-"Really? 😭",
+"Really? 🥺",
 "Think Again 😭",
-"Cutiepie Please 🥺",
-"System Error 😂",
-"Wrong Answer 😌",
-"Still No? 😭",
-"Pleaseeeee ❤️",
-"Don't Break My Heart 💔",
-"Last Chance 😏",
+"Cutiepie Please ❤️",
+"Are You Sure? 😏",
+"Wrong Answer 😂",
+"Try Again 😭",
+"Pleaseeeee 🥺",
+"Last Chance ❤️",
+"Almost There 😌",
 "Just Press YES ❤️"
-
 ];
 
 let noCounter = 0;
@@ -296,10 +294,6 @@ popup.innerHTML =
 
 `
 
-<h2>
-I LOVE YOU CUTIEPIE ❤️
-</h2>
-
 <p>
 Can't wait for tomorrow ❤️
 </p>
@@ -312,7 +306,7 @@ popup.innerHTML =
 `
 
 <h2>
-See You Tomorrow ❤️
+See You Tomorrow CutiePie ❤️
 </h2>
 `;
 
